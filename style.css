@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #2B547E;
+  --secondary-color: #E0EAF5;
+  --accent-color: #FF9800;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+
+
+nav {
+  background-color: #1F3A66;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+
+section {
+  padding: 50px 10%;
+}
+
+section h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+    #about img {
+  width: 150px;          /* photo size */
+  height: 150px;         /* optional: fix height */
+  object-fit: cover;     /* image ko neatly crop karta hai */
+  border-radius: 50%;    /* round image banata hai */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* soft shadow */
+  margin: 15px 0;
+}
+
+
+
+
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e68900;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #1F3A66;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
