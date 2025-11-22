@@ -1,0 +1,416 @@
+/* Base Styles */
+:root {
+    --primary-color: #f75d59; /* Red/Pink for buttons, highlights */
+    --secondary-color: #55c45e; /* Light Green for background */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #fff;
+    --bg-grey: #f8f8f8; /* For the main content area */
+    --border-radius: 8px;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: grey;
+    padding: 20px; /* Outer green padding */
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 0 40px 40px 40px; /* Main content padding, adjusted for sections */
+}
+
+h2, h3 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* Utility Classes */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-order {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    font-size: 1.1em;
+    padding: 12px 30px;
+}
+
+.btn-order:hover, .btn-search:hover {
+    background-color: #e04b48; /* Darker primary color on hover */
+}
+
+.btn-login {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-signup {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    margin-left: 10px;
+}
+
+/* 1. Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--bg-grey);
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 2. Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 60px 0 80px 0;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-content h2 strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.hero-content p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-light);
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 5px;
+    margin-top: 40px;
+    max-width: 550px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input, .search-bar select {
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    background: none;
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border-right: 1px solid #eee;
+}
+
+.search-bar select {
+    min-width: 150px;
+}
+
+.btn-search {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    padding: 10px 25px;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+/* 3. Browse by Category Section */
+.category-section, .featured-restaurants, .promo-offers, .customer-say {
+    padding: 40px 0;
+}
+
+.category-section h3, .featured-restaurants h3, .promo-offers h3, .customer-say h3 {
+    text-align: left;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.category-item {
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--bg-grey);
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+}
+
+.category-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    /* Circular effect for images/icons */
+    border-radius: 50%;
+    background-color: var(--bg-light); 
+    padding: 10px;
+}
+
+.category-item p {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* 4. Featured Restaurants Section */
+.restaurant-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* For responsiveness on smaller screens */
+    padding-bottom: 10px;
+}
+
+.restaurant-card {
+    min-width: 250px;
+    flex: 1;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.restaurant-card h4 {
+    margin: 15px 15px 5px 15px;
+    font-size: 1.2em;
+}
+
+.restaurant-card p {
+    color: var(--text-light);
+    margin: 0 15px;
+    font-size: 0.9em;
+}
+
+.restaurant-card .rating {
+    margin: 10px 15px 15px 15px;
+    color: #fbbc05; /* Yellow for stars */
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.restaurant-card .rating .fa-star {
+    margin-right: 5px;
+}
+
+/* 5. Promo Offers Section */
+.promo-offers {
+    background-color: var(--bg-grey);
+    margin: 40px -40px; /* To extend the background full-width of the page-container */
+    padding: 40px 40px;
+}
+
+.offers-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.offer-card {
+    flex: 1;
+    text-align: center;
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    min-width: 200px;
+}
+
+.offer-icon {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.offer-card p {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.offer-card strong {
+    color: var(--primary-color);
+}
+
+/* 6. Customer Testimonials Section */
+.customer-say {
+    padding-bottom: 60px;
+}
+
+.testimonials-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.testimonial-card {
+    flex: 1;
+    text-align: center;
+    background-color: var(--bg-light);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    border-top: 5px solid var(--primary-color); /* Red line on top */
+}
+
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: normal !important;
+}
+
+/* Placeholder for the user-uploaded images */
+.hero-image img,
+.category-item img,
+.restaurant-card img {
+    /* To represent the complexity of the actual images */
+    background-color: #ccc;
+    object-fit: cover;
+}
+
+.testimonial-card img {
+     background-color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 12px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #555;
+    flex-wrap: wrap;
+}
+.footer-column {
+    flex-basis: 22%;
+    min-width: 150px;
+}
+
+.footer-column h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: #ff5a5f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 12px;
+}
